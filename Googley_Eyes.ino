@@ -1,16 +1,13 @@
-#include <WEMOS_Matrix_LED.h>
+#include <WEMOS_Matrix_LED.h> //https://github.com/wemos/WEMOS_Matrix_LED_Shield_Arduino_Library
 
-MLED mled(5); //set intensity=5
+MLED mled(8); //set intensity
 
 void setup() {
-  // put your setup code here, to run once:
-
-
 }
 
 void loop() {
-  int pupilXpos = 3; //pupil position. I want to map this to a joystick or other control later
-  int pupilYpos = 3;
+  int pupilXpos = random(1, 6); //pupil position. I want to map this to a joystick or other control later
+  int pupilYpos = random(1, 6);
 
   for (int x = 2; x < 6; x++) {      //Drawing the eye ball
     for (int y = 0; y < 8; y++) {
@@ -33,4 +30,7 @@ void loop() {
 
 
   mled.display(); //refresh the display
+
+  delay(500);
+
 }
